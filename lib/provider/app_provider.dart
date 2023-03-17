@@ -11,9 +11,8 @@ import 'package:version/version.dart';
 import 'package:flutter_start_app/model/setting.dart';
 import 'package:flutter_start_app/analytics.dart';
 
-
-part 'app_provider.g.dart';
-part 'app_provider.freezed.dart';
+part 'gen/app_provider.g.dart';
+part 'gen/app_provider.freezed.dart';
 
 @freezed
 class AppState with _$AppState {

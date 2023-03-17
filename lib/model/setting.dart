@@ -3,8 +3,8 @@ import 'package:flutter_start_app/model/lang.dart';
 import 'package:flutter_start_app/model/theme.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'setting.freezed.dart';
-part 'setting.g.dart';
+part 'gen/setting.freezed.dart';
+part 'gen/setting.g.dart';
 
 @freezed
 class Setting with _$Setting {
