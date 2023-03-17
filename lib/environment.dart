@@ -1,6 +1,8 @@
 class Environment {
   final EnvironmentKind kind;
   final String baseApiUrl;
+  final String contactUrl = "";
+  final String policyUrl = "";
 
   factory Environment() {
     const env = String.fromEnvironment('env');
@@ -14,18 +16,18 @@ class Environment {
 
   const Environment.prod()
       : this._(
-          kind: EnvironmentKind.Prod,
+          kind: EnvironmentKind.prod,
           baseApiUrl: "https://nrikiji.com",
         );
 
   const Environment.dev()
       : this._(
-          kind: EnvironmentKind.Dev,
+          kind: EnvironmentKind.dev,
           baseApiUrl: "https://dev.nrikiji.com",
         );
 }
 
 enum EnvironmentKind {
-  Dev,
-  Prod,
+  dev,
+  prod,
 }

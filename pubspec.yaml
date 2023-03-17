@@ -32,9 +32,33 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  # Firebase
   firebase_core: ^2.7.1
   firebase_analytics: ^10.1.5
   firebase_crashlytics: ^3.0.16
+  firebase_remote_config: ^3.0.14
+
+  # 状態管理パッケージ
+  flutter_riverpod: ^2.3.2
+
+  # アプリのバージョンを取得
+  package_info: ^2.0.2
+
+  # アプリのバージョンを取得
+  version: ^2.0.0
+
+  # 設定画面UI
+  flutter_settings_ui: ^2.0.1
+
+  # ローカルストレージ
+  shared_preferences: ^2.0.18
+
+  # ブラウザ起動
+  url_launcher: ^6.1.10
+
+  freezed_annotation: ^2.2.0
+  riverpod_annotation: ^2.0.2
+  json_serializable: ^6.6.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -43,6 +67,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  build_runner: ^2.3.3
+  riverpod_generator: ^2.1.4
+  freezed: ^2.3.2
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
