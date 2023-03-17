@@ -3,9 +3,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_start_app/localize.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter_start_app/localize.dart';
 import 'package:flutter_start_app/enum/lang.dart';
 import 'package:flutter_start_app/enum/theme.dart';
 import 'package:flutter_start_app/page/home_page.dart';

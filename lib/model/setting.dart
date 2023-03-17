@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_start_app/enum/lang.dart';
 import 'package:flutter_start_app/enum/theme.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'gen/setting.freezed.dart';
 part 'gen/setting.g.dart';
