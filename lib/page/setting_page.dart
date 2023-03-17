@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_start_app/localize.dart';
 import 'package:flutter_start_app/environment.dart';
-import 'package:flutter_start_app/model/lang.dart';
-import 'package:flutter_start_app/model/theme.dart';
+import 'package:flutter_start_app/enum/lang.dart';
+import 'package:flutter_start_app/enum/theme.dart';
 import 'package:flutter_start_app/provider/app_provider.dart';
 
 class SettingPage extends ConsumerWidget {
