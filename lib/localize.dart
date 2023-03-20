@@ -24,23 +24,41 @@ class AppLocalizations {
 }
 
 class LocalizeMessages {
-  final String greet;
+  // Settings
   final String titleSettings;
   final String labelSettings;
   final String labelTheme;
   final String labelLang;
+
+  // App Information
   final String labelThisApp;
   final String labelContact;
   final String labelPolicy;
+
+  // Theme
   final String labelThemeSystem;
   final String labelThemeLight;
   final String labelThemeDark;
+
+  // Language
   final String labelLangSystem;
   final String labelLangJa;
   final String labelLangEn;
 
+  // Review Dialog
+  final String labelReviewOk;
+  final String labelReviewCancel;
+  final String labelReviewDeny;
+  final String labelMessage;
+  final String labelConfirm;
+  final String labelOk;
+  final String labelCancel;
+  final String labelReviewApp;
+  final String labelLaunchAppStore;
+  final String labelLaunchPlayStore;
+  final String messageReview;
+
   LocalizeMessages({
-    required this.greet,
     required this.titleSettings,
     required this.labelSettings,
     required this.labelTheme,
@@ -54,6 +72,17 @@ class LocalizeMessages {
     required this.labelLangSystem,
     required this.labelLangJa,
     required this.labelLangEn,
+    required this.labelReviewOk,
+    required this.labelReviewCancel,
+    required this.labelReviewDeny,
+    required this.labelMessage,
+    required this.labelConfirm,
+    required this.labelOk,
+    required this.labelCancel,
+    required this.labelReviewApp,
+    required this.labelLaunchAppStore,
+    required this.labelLaunchPlayStore,
+    required this.messageReview,
   });
 
   factory LocalizeMessages.of(Locale locale) {
@@ -68,36 +97,70 @@ class LocalizeMessages {
   }
 
   factory LocalizeMessages.ja() => LocalizeMessages(
-        greet: 'こんにちは',
+        // 設定関連
         titleSettings: '設定',
         labelSettings: '設定',
         labelTheme: 'テーマ',
         labelLang: '言語',
-        labelThisApp: 'このアプリについて',
-        labelContact: 'お問合せ',
-        labelPolicy: 'プライバシーポリシー',
         labelThemeSystem: 'システム',
         labelThemeLight: 'ライト',
         labelThemeDark: 'ダーク',
         labelLangSystem: 'システム',
         labelLangJa: '日本語',
         labelLangEn: '英語',
+
+        // その他アプリ情報関連
+        labelThisApp: 'このアプリについて',
+        labelContact: 'お問合せ',
+        labelPolicy: 'プライバシーポリシー',
+
+        // メッセージ関連
+        labelMessage: 'メッセージ',
+        labelConfirm: '確認',
+        labelOk: 'OK',
+        labelCancel: 'キャンセル',
+
+        // アプリレビュー関連
+        labelReviewOk: '評価する',
+        labelReviewCancel: 'また今度',
+        labelReviewDeny: 'このメッセージを2度と表示しない',
+        labelReviewApp: 'このアプリを評価する',
+        labelLaunchAppStore: 'App Storeで開く',
+        labelLaunchPlayStore: 'Play Storeで開く',
+        messageReview: 'ご利用いただきありがとうございます。\n\nアプリ改善の励みになりますので、よろしければ評価をお願いします。',
       );
 
   factory LocalizeMessages.en() => LocalizeMessages(
-        greet: 'Hello',
+        // 設定関連
         titleSettings: 'Settings',
         labelSettings: 'Settings',
         labelTheme: 'Theme',
         labelLang: 'Language',
-        labelThisApp: 'About This App',
-        labelContact: 'Contact',
-        labelPolicy: 'Privacy Policy',
         labelThemeSystem: 'System',
         labelThemeLight: 'Light',
         labelThemeDark: 'Dark',
         labelLangSystem: 'System',
         labelLangJa: 'Japanese',
         labelLangEn: 'English',
+
+        // その他アプリ情報関連
+        labelThisApp: 'About This App',
+        labelContact: 'Contact',
+        labelPolicy: 'Privacy Policy',
+
+        // メッセージ関連
+        labelMessage: 'Message',
+        labelConfirm: 'Confirmation',
+        labelOk: 'OK',
+        labelCancel: 'Cancel',
+
+        // アプリレビュー関連
+        labelReviewOk: 'Rate Now',
+        labelReviewCancel: 'Later',
+        labelReviewDeny: 'Don\'t show again',
+        labelReviewApp: 'Rate This App',
+        labelLaunchAppStore: 'Open in App Store',
+        labelLaunchPlayStore: 'Open in Play Store',
+        messageReview: 'Thank you for using our app.\n\nYour rating would be a great motivation for us to improve our app.',
       );
 }

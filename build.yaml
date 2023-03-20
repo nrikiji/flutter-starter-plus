@@ -4,8 +4,8 @@ targets:
       source_gen|combining_builder:
         options:
           build_extensions:
-            'lib/{{dir}}/{{file}}.dart': 'lib/{{dir}}/gen/{{file}}.g.dart'
+            'lib/{{dir}}/{{file}}.dart': 'lib/gen/{{dir}}/{{file}}.g.dart'
       freezed:
         options:
           build_extensions:
-            'lib/{{dir}}/{{file}}.dart': 'lib/{{dir}}/gen/{{file}}.freezed.dart'
+            'lib/{{dir}}/{{file}}.dart': 'lib/gen/{{dir}}/{{file}}.freezed.dart'

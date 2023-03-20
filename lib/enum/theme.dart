@@ -19,14 +19,14 @@ extension ThemeExtension on Theme {
 
   ThemeMode? get themeMode => themeModes[this];
 
-  String i18n(BuildContext context) {
+  String i18n(LocalizeMessages messages) {
     switch (this) {
       case Theme.system:
-        return AppLocalizations.of(context).labelThemeSystem;
+        return messages.labelThemeSystem;
       case Theme.light:
-        return AppLocalizations.of(context).labelThemeLight;
+        return messages.labelThemeLight;
       case Theme.dark:
-        return AppLocalizations.of(context).labelThemeDark;
+        return messages.labelThemeDark;
     }
   }
 }

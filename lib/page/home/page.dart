@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_start_app/page/setting_page.dart';
+import 'package:flutter_start_app/page/setting/page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);

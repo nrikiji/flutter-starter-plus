@@ -3,6 +3,8 @@ class Environment {
   final String baseApiUrl;
   final String contactUrl = "";
   final String policyUrl = "";
+  final String playStoreReviewUrl = "";
+  final String appStoreReviewUrl = "";
 
   factory Environment() {
     const env = String.fromEnvironment('env');

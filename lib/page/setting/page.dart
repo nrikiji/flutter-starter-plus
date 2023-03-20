@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart' hide Theme;
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,6 +9,8 @@ import 'package:flutter_start_app/environment.dart';
 import 'package:flutter_start_app/enum/lang.dart';
 import 'package:flutter_start_app/enum/theme.dart';
 import 'package:flutter_start_app/provider/app_provider.dart';
+
+part './setting_item.dart';
 
 class SettingPage extends ConsumerWidget {
   const SettingPage({super.key});
@@ -31,50 +35,26 @@ class SettingPage extends ConsumerWidget {
                   title: AppLocalizations.of(context).labelSettings,
                   tiles: [
                     // テーマ
-                    SettingsTile(
-                      titleWidget: Text(AppLocalizations.of(context).labelTheme),
-                      subtitle: ref.watch(appProvider).setting.theme.i18n(context),
-                      onPressed: (context) {
-                        showDialog(
-                          context: context,
-                          builder: (context) => SimpleDialog(
-                            title: Text(AppLocalizations.of(context).labelTheme),
-                            children: Theme.values.map((x) {
-                              return SimpleDialogOption(
-                                child: Text(x.i18n(context)),
-                                onPressed: () {
-                                  final setting = ref.read(appProvider).setting.copyWith(theme: x);
-                                  ref.read(appProvider.notifier).updateSetting(setting);
-                                  Navigator.pop(context);
-                                },
-                              );
-                            }).toList(),
-                          ),
-                        );
+                    SettingItem(
+                      title: AppLocalizations.of(context).labelTheme,
+                      values: Theme.values,
+                      getDisplayName: (theme) => theme.i18n(AppLocalizations.of(context)),
+                      currentValue: ref.watch(appProvider).setting.theme,
+                      onSelected: (theme) {
+                        final setting = ref.read(appProvider).setting.copyWith(theme: theme);
+                        ref.read(appProvider.notifier).updateSetting(setting);
                       },
                     ),
 
                     // 言語
-                    SettingsTile(
-                      titleWidget: Text(AppLocalizations.of(context).labelLang),
-                      subtitle: ref.watch(appProvider).setting.lang.i18n(context),
-                      onPressed: (context) {
-                        showDialog(
-                          context: context,
-                          builder: (context) => SimpleDialog(
-                            title: Text(AppLocalizations.of(context).labelLang),
-                            children: Lang.values.map((x) {
-                              return SimpleDialogOption(
-                                child: Text(x.i18n(context)),
-                                onPressed: () {
-                                  final setting = ref.read(appProvider).setting.copyWith(lang: x);
-                                  ref.read(appProvider.notifier).updateSetting(setting);
-                                  Navigator.pop(context);
-                                },
-                              );
-                            }).toList(),
-                          ),
-                        );
+                    SettingItem(
+                      title: AppLocalizations.of(context).labelLang,
+                      values: Lang.values,
+                      getDisplayName: (lang) => lang.i18n(AppLocalizations.of(context)),
+                      currentValue: ref.watch(appProvider).setting.lang,
+                      onSelected: (lang) {
+                        final setting = ref.read(appProvider).setting.copyWith(lang: lang);
+                        ref.read(appProvider.notifier).updateSetting(setting);
                       },
                     ),
                   ],
@@ -94,6 +74,15 @@ class SettingPage extends ConsumerWidget {
                     SettingsTile(
                       title: AppLocalizations.of(context).labelPolicy,
                       onPressed: (context) => launchUrl(Uri.parse(Environment().policyUrl)),
+                    ),
+
+                    // このアプリを評価する
+                    SettingsTile(
+                      title: AppLocalizations.of(context).labelReviewApp,
+                      onPressed: (context) {
+                        final url = Platform.isAndroid ? Environment().playStoreReviewUrl : Environment().appStoreReviewUrl;
+                        launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+                      },
                     ),
                   ],
                 ),

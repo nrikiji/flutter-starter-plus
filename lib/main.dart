@@ -8,7 +8,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter_start_app/localize.dart';
 import 'package:flutter_start_app/enum/lang.dart';
 import 'package:flutter_start_app/enum/theme.dart';
-import 'package:flutter_start_app/page/home_page.dart';
+import 'package:flutter_start_app/page/home/page.dart';
 import 'package:flutter_start_app/provider/app_provider.dart';
 
 void main() {
@@ -31,13 +31,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ref, _) {
+      // 言語設定またはテーマが変更されたら再ビルド
+      final locale = ref.watch(appProvider.select((state) => state.setting.lang.locale));
+      final themeMode = ref.watch(appProvider.select((state) => state.setting.theme.themeMode));
+
       return MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light().copyWith(),
+        locale: locale,
+        themeMode: themeMode,
         darkTheme: ThemeData.dark().copyWith(),
-        themeMode: ref.watch(appProvider.select((state) => state.setting.theme.themeMode)),
-        locale: ref.watch(appProvider.select((state) => state.setting.lang.locale)),
         localizationsDelegates: const [
           AppLocalizationsDelegate(),
           GlobalMaterialLocalizations.delegate,

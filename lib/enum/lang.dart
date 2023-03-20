@@ -19,14 +19,14 @@ extension LangExtension on Lang {
 
   Locale? get locale => locales[this];
 
-  String i18n(BuildContext context) {
+  String i18n(LocalizeMessages messages) {
     switch (this) {
       case Lang.system:
-        return AppLocalizations.of(context).labelLangSystem;
+        return messages.labelLangSystem;
       case Lang.ja:
-        return AppLocalizations.of(context).labelLangJa;
+        return messages.labelLangJa;
       case Lang.en:
-        return AppLocalizations.of(context).labelLangEn;
+        return messages.labelLangEn;
     }
   }
 }
