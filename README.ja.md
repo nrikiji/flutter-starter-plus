@@ -1,11 +1,11 @@
 # flutter-starter-plus
 
-flutterで毎回行っている作業や設定を予めテンプレート化したプロジェクトです。  
-また、どのアプリでも実装している画面や機能を追加しました。
+これは、よく使用するflutterの設定と機能を事前に用意し、プロジェクトを迅速に開始できるようにしたテンプレートプロジェクトです。  
+また、一般的な画面や機能をすぐに利用できるようにもなっています。
 
 flutterのバージョンは3.7.7
 
-以下は、Flutterアプリの主な設定と機能の説明です。  
+以下は、主な設定と機能の説明です。  
 
 主な設定:  
 - ビルド設定(DebugかRelease)ごとに、アプリ名やアプリID(Bundle Identifier、Application ID)を変更できます。
@@ -15,15 +15,17 @@ flutterのバージョンは3.7.7
 - 多言語に対応しています。
 
 主な機能:
-- ユーザーがテーマや言語設定を変更できるようにしています。設定内容はSharedPreferencesに保存され、flutter_settings_uiを使用してUIを構築しています。
+- ユーザーがテーマや言語設定を変更できるようにしています。設定内容はSharedPreferencesに保存され、[flutter_settings_ui](https://pub.dev/documentation/flutter_settings_ui/latest/)を使用してUIを構築しています。
 - Firebase SDKの初期化を行い、Analytics、Crashlytics、RemoteConfigの機能を使用できます。また、RemoteConfigで設定したアプリのバージョン以下の場合のみ計測を有効にすることができます。
 - レビューを促すダイアログの表示制御を行えます。
+- 状態管理には[Riverpod](https://github.com/rrousselGit/riverpod)を使用しています。
 
 セットアップ手順
 1. [プロジェクトのクローン](#プロジェクトのクローン)
 1. [git管理対象外のファイルを手動で追加する](#git管理対象外のファイルを手動で追加する)
 1. [AndroidStudioビルド設定](#androidstudioビルド設定)
 1. [GitHub Actions設定](#github-actions設定)
+1. [デフォルトのAnalyticsを無効とする](#デフォルトのanalyticsを無効とする)
 1. [プロジェクト名リネーム](#プロジェクト名リネーム)
 
 ## セットアップ手順
@@ -156,16 +158,17 @@ google-services.jsonをbase64した値
 $ base64 -i google-services.json
 ```
 
-### デフォルトではAnalyticsを無効化する
-```ios/Runner/GoogleService-Info-prod.plist
+### デフォルトのAnalyticsを無効とする
+ios/Runner/GoogleService-Info-prod.plist
+```
 <dict>
-    ・・・
-    <key>IS_ANALYTICS_ENABLED</key>
-    <false></false>
+　　<key>IS_ANALYTICS_ENABLED</key>
+ <false></false>
 </dict>
 ```
 
-```android/app/src/main/AndroidManifest.xml
+android/app/src/main/AndroidManifest.xml
+```
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" ・・・>
     <application ・・・>
        <meta-data
