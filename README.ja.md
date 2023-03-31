@@ -1,17 +1,23 @@
 # flutter-starter-plus
 
-flutterで毎回行っている作業や設定を予めテンプレート化したプロジェクトです。
+flutterで毎回行っている作業や設定を予めテンプレート化したプロジェクトです。  
+また、どのアプリでも実装している画面や機能を追加しました。
 
 flutterのバージョンは3.7.7
 
-主な設定は以下のとおり。
-- ビルド設定(Debug or Release)ごとに、アプリ名・アプリID(Bundle Identifier、Application Id)を切り替えることができる
-- ビルド時に環境(Dev or Prod)ごとに定義した値で切り替える(Web Apiの接続先など)ことができる
-- Firebase SDKを組み込んでいる。また、ビルド設定(Debug or Release)ごとに、設定ファイルを切り替えることができる
-- GitHub Actionsを利用してApp StoreまたはPlay Storeへアップロードすることができる
-- 多言語対応
+以下は、Flutterアプリの主な設定と機能の説明です。  
 
-※ アップロードのタイミングはgit tag
+主な設定:  
+- ビルド設定(DebugかRelease)ごとに、アプリ名やアプリID(Bundle Identifier、Application ID)を変更できます。
+- ビルド時に環境(DevかProd)ごとに定義した値で切り替えることができます。例えば、Web APIの接続先を変更できます。
+- Firebase SDKを組み込んでいます。また、ビルド設定(DebugかRelease)ごとに、Firebaseの設定ファイルを切り替えることができます。
+- GitHub Actionsを使用して、App StoreまたはPlay Storeにアプリをアップロードできます。また、アップロードのタイミングはgit tagとしています。
+- 多言語に対応しています。
+
+主な機能:
+- ユーザーがテーマや言語設定を変更できるようにしています。設定内容はSharedPreferencesに保存され、flutter_settings_uiを使用してUIを構築しています。
+- Firebase SDKの初期化を行い、Analytics、Crashlytics、RemoteConfigの機能を使用できます。また、RemoteConfigで設定したアプリのバージョン以下の場合のみ計測を有効にすることができます。
+- レビューを促すダイアログの表示制御を行えます。
 
 セットアップ手順
 1. [プロジェクトのクローン](#プロジェクトのクローン)
@@ -148,6 +154,25 @@ $ base64 -i api-xxxxx-xxxxx-xxxxx.json
 google-services.jsonをbase64した値
 
 $ base64 -i google-services.json
+```
+
+### デフォルトではAnalyticsを無効化する
+```ios/Runner/GoogleService-Info-prod.plist
+<dict>
+    ・・・
+    <key>IS_ANALYTICS_ENABLED</key>
+    <false></false>
+</dict>
+```
+
+```android/app/src/main/AndroidManifest.xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" ・・・>
+    <application ・・・>
+       <meta-data
+           android:name="firebase_analytics_collection_enabled"
+           android:value="false" />
+    </application>
+</manifest>
 ```
 
 ### プロジェクト名リネーム
