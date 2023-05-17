@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -11,18 +11,15 @@ import 'package:flutter_start_app/enum/theme.dart';
 import 'package:flutter_start_app/page/home/page.dart';
 import 'package:flutter_start_app/provider/app_provider.dart';
 
-void main() {
-  runZonedGuarded(
-    () {
-      WidgetsFlutterBinding.ensureInitialized();
-      return runApp(const ProviderScope(child: MyApp()));
-    },
-    (e, st) {
-      FirebaseCrashlytics.instance.recordError(e, st);
-      log(e.toString());
-      log(st.toString());
-    },
-  );
+void main() async {
+  await runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+    return runApp(const ProviderScope(child: MyApp()));
+  }, (error, stackTrace) {
+    FirebaseCrashlytics.instance.recordError(error, stackTrace);
+  });
 }
 
 class MyApp extends StatelessWidget {
