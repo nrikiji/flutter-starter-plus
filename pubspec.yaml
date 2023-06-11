@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.31+31
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.0.3 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -33,10 +33,10 @@ dependencies:
     sdk: flutter
 
   # Firebase
-  firebase_core: ^2.12.0
-  firebase_analytics: ^10.4.0
-  firebase_crashlytics: ^3.3.0
-  firebase_remote_config: ^4.2.0
+  firebase_core: ^2.13.1
+  firebase_analytics: ^10.4.2
+  firebase_crashlytics: ^3.3.2
+  firebase_remote_config: ^4.2.2
 
   # 状態管理パッケージ
   flutter_riverpod: ^2.3.6
@@ -51,14 +51,14 @@ dependencies:
   flutter_settings_ui: ^2.0.1
 
   # ローカルストレージ
-  shared_preferences: ^2.1.1
+  shared_preferences: ^2.1.2
 
   # ブラウザ起動
   url_launcher: ^6.1.11
 
   freezed_annotation: ^2.2.0
   riverpod_annotation: ^2.1.1
-  json_serializable: ^6.6.2
+  json_serializable: ^6.7.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -68,9 +68,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  build_runner: ^2.4.4
+  build_runner: ^2.4.5
   riverpod_generator: ^2.2.3
-  freezed: ^2.3.4
+  freezed: ^2.3.5
 
   source_gen: ^1.3.2
 
