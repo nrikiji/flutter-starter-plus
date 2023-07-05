@@ -58,6 +58,10 @@ class LocalizeMessages {
   final String labelLaunchPlayStore;
   final String messageReview;
 
+  // RUL
+  final String contactUrl;
+  final String policyUrl;
+
   LocalizeMessages({
     required this.titleSettings,
     required this.labelSettings,
@@ -83,6 +87,8 @@ class LocalizeMessages {
     required this.labelLaunchAppStore,
     required this.labelLaunchPlayStore,
     required this.messageReview,
+    required this.contactUrl,
+    required this.policyUrl,
   });
 
   factory LocalizeMessages.of(Locale locale) {
@@ -128,6 +134,10 @@ class LocalizeMessages {
         labelLaunchAppStore: 'App Storeで開く',
         labelLaunchPlayStore: 'Play Storeで開く',
         messageReview: 'ご利用いただきありがとうございます。\n\nアプリ改善の励みになりますので、よろしければ評価をお願いします。',
+
+        // URL
+        contactUrl: "https://",
+        policyUrl: "https://",
       );
 
   factory LocalizeMessages.en() => LocalizeMessages(
@@ -162,5 +172,9 @@ class LocalizeMessages {
         labelLaunchAppStore: 'Open in App Store',
         labelLaunchPlayStore: 'Open in Play Store',
         messageReview: 'Thank you for using our app.\n\nYour rating would be a great motivation for us to improve our app.',
+
+        // URL
+        contactUrl: "https://",
+        policyUrl: "https://",
       );
 }

@@ -67,13 +67,13 @@ class SettingPage extends ConsumerWidget {
                     // お問い合わせ
                     SettingsTile(
                       title: AppLocalizations.of(context).labelContact,
-                      onPressed: (context) => launchUrl(Uri.parse(Environment().contactUrl)),
+                      onPressed: (context) => launchUrl(Uri.parse(AppLocalizations.of(context).contactUrl)),
                     ),
 
                     // プライバシーポリシー
                     SettingsTile(
                       title: AppLocalizations.of(context).labelPolicy,
-                      onPressed: (context) => launchUrl(Uri.parse(Environment().policyUrl)),
+                      onPressed: (context) => launchUrl(Uri.parse(AppLocalizations.of(context).policyUrl)),
                     ),
 
                     // このアプリを評価する

@@ -1,8 +1,6 @@
 class Environment {
   final EnvironmentKind kind;
   final String baseApiUrl;
-  final String contactUrl = "";
-  final String policyUrl = "";
   final String playStoreReviewUrl = "";
   final String appStoreReviewUrl = "";
 
