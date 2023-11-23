@@ -33,13 +33,13 @@ dependencies:
     sdk: flutter
 
   # Firebase
-  firebase_core: ^2.22.0
-  firebase_analytics: ^10.7.0
-  firebase_crashlytics: ^3.4.4
-  firebase_remote_config: ^4.3.4
+  firebase_core: ^2.23.0
+  firebase_analytics: ^10.7.1
+  firebase_crashlytics: ^3.4.5
+  firebase_remote_config: ^4.3.5
 
   # 状態管理パッケージ
-  flutter_riverpod: ^2.4.6
+  flutter_riverpod: ^2.4.8
 
   # アプリのバージョンを取得
   package_info: ^2.0.2
@@ -57,7 +57,7 @@ dependencies:
   url_launcher: ^6.2.1
 
   freezed_annotation: ^2.4.1
-  riverpod_annotation: ^2.3.1
+  riverpod_annotation: ^2.3.2
   json_serializable: ^6.7.1
 
   # プロジェクト名リネームツールで使用
@@ -72,7 +72,7 @@ dev_dependencies:
     sdk: flutter
 
   build_runner: ^2.4.6
-  riverpod_generator: ^2.3.6
+  riverpod_generator: ^2.3.8
   freezed: ^2.4.5
 
   source_gen: ^1.4.0
