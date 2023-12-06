@@ -163,7 +163,7 @@ $ base64 -i google-services.json
 ios/Runner/GoogleService-Info-prod.plist
 ```
 <dict>
-　　<key>IS_ANALYTICS_ENABLED</key>
+　　<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
  <false></false>
 </dict>
 ```
