@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.36+36
 
 environment:
-  sdk: '>=3.2.2 <4.0.0'
+  sdk: '>=3.2.3 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -33,10 +33,10 @@ dependencies:
     sdk: flutter
 
   # Firebase
-  firebase_core: ^2.24.0
-  firebase_analytics: ^10.7.2
-  firebase_crashlytics: ^3.4.6
-  firebase_remote_config: ^4.3.6
+  firebase_core: ^2.24.1
+  firebase_analytics: ^10.7.3
+  firebase_crashlytics: ^3.4.7
+  firebase_remote_config: ^4.3.7
 
   # 状態管理パッケージ
   flutter_riverpod: ^2.4.9
