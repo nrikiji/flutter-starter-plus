@@ -1,7 +1,7 @@
 part of 'page.dart';
 
 // 設定項目を表す共通のコンポーネント
-class SettingItem<T extends Enum> extends AbstractTile {
+class SettingItem<T extends Enum> extends AbstractSettingsTile {
   final String title;
   final List<T> values;
   final String Function(T) getDisplayName;
@@ -20,8 +20,8 @@ class SettingItem<T extends Enum> extends AbstractTile {
   @override
   Widget build(BuildContext context) {
     return SettingsTile(
-      titleWidget: Text(title),
-      subtitle: getDisplayName(currentValue),
+      title: Text(title),
+      trailing: Text(getDisplayName(currentValue)),
       onPressed: (context) {
         showDialog(
           context: context,

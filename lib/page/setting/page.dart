@@ -32,7 +32,7 @@ class SettingPage extends ConsumerWidget {
               sections: [
                 // 設定
                 SettingsSection(
-                  title: AppLocalizations.of(context).labelSettings,
+                  title: Text(AppLocalizations.of(context).labelSettings),
                   tiles: [
                     // テーマ
                     SettingItem(
@@ -62,23 +62,23 @@ class SettingPage extends ConsumerWidget {
 
                 // このアプリについて
                 SettingsSection(
-                  title: "${AppLocalizations.of(context).labelThisApp}  ${ref.watch(appProvider).appVersion!}",
+                  title: Text("${AppLocalizations.of(context).labelThisApp}  ${ref.watch(appProvider).appVersion!}"),
                   tiles: [
                     // お問い合わせ
                     SettingsTile(
-                      title: AppLocalizations.of(context).labelContact,
+                      title: Text(AppLocalizations.of(context).labelContact),
                       onPressed: (context) => launchUrl(Uri.parse(AppLocalizations.of(context).contactUrl)),
                     ),
 
                     // プライバシーポリシー
                     SettingsTile(
-                      title: AppLocalizations.of(context).labelPolicy,
+                      title: Text(AppLocalizations.of(context).labelPolicy),
                       onPressed: (context) => launchUrl(Uri.parse(AppLocalizations.of(context).policyUrl)),
                     ),
 
                     // このアプリを評価する
                     SettingsTile(
-                      title: AppLocalizations.of(context).labelReviewApp,
+                      title: Text(AppLocalizations.of(context).labelReviewApp),
                       onPressed: (context) {
                         final url = Platform.isAndroid ? Environment().playStoreReviewUrl : Environment().appStoreReviewUrl;
                         launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);

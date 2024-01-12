@@ -6,12 +6,13 @@ part of '../../model/setting.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Setting _$$_SettingFromJson(Map<String, dynamic> json) => _$_Setting(
+_$SettingImpl _$$SettingImplFromJson(Map<String, dynamic> json) =>
+    _$SettingImpl(
       theme: $enumDecodeNullable(_$ThemeEnumMap, json['theme']) ?? Theme.system,
       lang: $enumDecodeNullable(_$LangEnumMap, json['lang']) ?? Lang.system,
     );
 
-Map<String, dynamic> _$$_SettingToJson(_$_Setting instance) =>
+Map<String, dynamic> _$$SettingImplToJson(_$SettingImpl instance) =>
     <String, dynamic>{
       'theme': _$ThemeEnumMap[instance.theme]!,
       'lang': _$LangEnumMap[instance.lang]!,

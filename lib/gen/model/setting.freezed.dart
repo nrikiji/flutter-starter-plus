@@ -66,20 +66,21 @@ class _$SettingCopyWithImpl<$Res, $Val extends Setting>
 }
 
 /// @nodoc
-abstract class _$$_SettingCopyWith<$Res> implements $SettingCopyWith<$Res> {
-  factory _$$_SettingCopyWith(
-          _$_Setting value, $Res Function(_$_Setting) then) =
-      __$$_SettingCopyWithImpl<$Res>;
+abstract class _$$SettingImplCopyWith<$Res> implements $SettingCopyWith<$Res> {
+  factory _$$SettingImplCopyWith(
+          _$SettingImpl value, $Res Function(_$SettingImpl) then) =
+      __$$SettingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Theme theme, Lang lang});
 }
 
 /// @nodoc
-class __$$_SettingCopyWithImpl<$Res>
-    extends _$SettingCopyWithImpl<$Res, _$_Setting>
-    implements _$$_SettingCopyWith<$Res> {
-  __$$_SettingCopyWithImpl(_$_Setting _value, $Res Function(_$_Setting) _then)
+class __$$SettingImplCopyWithImpl<$Res>
+    extends _$SettingCopyWithImpl<$Res, _$SettingImpl>
+    implements _$$SettingImplCopyWith<$Res> {
+  __$$SettingImplCopyWithImpl(
+      _$SettingImpl _value, $Res Function(_$SettingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -88,7 +89,7 @@ class __$$_SettingCopyWithImpl<$Res>
     Object? theme = null,
     Object? lang = null,
   }) {
-    return _then(_$_Setting(
+    return _then(_$SettingImpl(
       theme: null == theme
           ? _value.theme
           : theme // ignore: cast_nullable_to_non_nullable
@@ -103,11 +104,11 @@ class __$$_SettingCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Setting with DiagnosticableTreeMixin implements _Setting {
-  const _$_Setting({this.theme = Theme.system, this.lang = Lang.system});
+class _$SettingImpl with DiagnosticableTreeMixin implements _Setting {
+  const _$SettingImpl({this.theme = Theme.system, this.lang = Lang.system});
 
-  factory _$_Setting.fromJson(Map<String, dynamic> json) =>
-      _$$_SettingFromJson(json);
+  factory _$SettingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SettingImplFromJson(json);
 
   @override
   @JsonKey()
@@ -131,10 +132,10 @@ class _$_Setting with DiagnosticableTreeMixin implements _Setting {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Setting &&
+            other is _$SettingImpl &&
             (identical(other.theme, theme) || other.theme == theme) &&
             (identical(other.lang, lang) || other.lang == lang));
   }
@@ -146,21 +147,21 @@ class _$_Setting with DiagnosticableTreeMixin implements _Setting {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SettingCopyWith<_$_Setting> get copyWith =>
-      __$$_SettingCopyWithImpl<_$_Setting>(this, _$identity);
+  _$$SettingImplCopyWith<_$SettingImpl> get copyWith =>
+      __$$SettingImplCopyWithImpl<_$SettingImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SettingToJson(
+    return _$$SettingImplToJson(
       this,
     );
   }
 }
 
 abstract class _Setting implements Setting {
-  const factory _Setting({final Theme theme, final Lang lang}) = _$_Setting;
+  const factory _Setting({final Theme theme, final Lang lang}) = _$SettingImpl;
 
-  factory _Setting.fromJson(Map<String, dynamic> json) = _$_Setting.fromJson;
+  factory _Setting.fromJson(Map<String, dynamic> json) = _$SettingImpl.fromJson;
 
   @override
   Theme get theme;
@@ -168,6 +169,6 @@ abstract class _Setting implements Setting {
   Lang get lang;
   @override
   @JsonKey(ignore: true)
-  _$$_SettingCopyWith<_$_Setting> get copyWith =>
+  _$$SettingImplCopyWith<_$SettingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

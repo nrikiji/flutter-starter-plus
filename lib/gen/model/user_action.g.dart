@@ -6,15 +6,15 @@ part of '../../model/user_action.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserAction _$$_UserActionFromJson(Map<String, dynamic> json) =>
-    _$_UserAction(
+_$UserActionImpl _$$UserActionImplFromJson(Map<String, dynamic> json) =>
+    _$UserActionImpl(
       launchCount: json['launchCount'] as int? ?? 0,
       reviewStatus:
           $enumDecodeNullable(_$ReviewStatusEnumMap, json['reviewStatus']) ??
               ReviewStatus.cancel,
     );
 
-Map<String, dynamic> _$$_UserActionToJson(_$_UserAction instance) =>
+Map<String, dynamic> _$$UserActionImplToJson(_$UserActionImpl instance) =>
     <String, dynamic>{
       'launchCount': instance.launchCount,
       'reviewStatus': _$ReviewStatusEnumMap[instance.reviewStatus]!,

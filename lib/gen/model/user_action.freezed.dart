@@ -68,22 +68,22 @@ class _$UserActionCopyWithImpl<$Res, $Val extends UserAction>
 }
 
 /// @nodoc
-abstract class _$$_UserActionCopyWith<$Res>
+abstract class _$$UserActionImplCopyWith<$Res>
     implements $UserActionCopyWith<$Res> {
-  factory _$$_UserActionCopyWith(
-          _$_UserAction value, $Res Function(_$_UserAction) then) =
-      __$$_UserActionCopyWithImpl<$Res>;
+  factory _$$UserActionImplCopyWith(
+          _$UserActionImpl value, $Res Function(_$UserActionImpl) then) =
+      __$$UserActionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int launchCount, ReviewStatus reviewStatus});
 }
 
 /// @nodoc
-class __$$_UserActionCopyWithImpl<$Res>
-    extends _$UserActionCopyWithImpl<$Res, _$_UserAction>
-    implements _$$_UserActionCopyWith<$Res> {
-  __$$_UserActionCopyWithImpl(
-      _$_UserAction _value, $Res Function(_$_UserAction) _then)
+class __$$UserActionImplCopyWithImpl<$Res>
+    extends _$UserActionCopyWithImpl<$Res, _$UserActionImpl>
+    implements _$$UserActionImplCopyWith<$Res> {
+  __$$UserActionImplCopyWithImpl(
+      _$UserActionImpl _value, $Res Function(_$UserActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_UserActionCopyWithImpl<$Res>
     Object? launchCount = null,
     Object? reviewStatus = null,
   }) {
-    return _then(_$_UserAction(
+    return _then(_$UserActionImpl(
       launchCount: null == launchCount
           ? _value.launchCount
           : launchCount // ignore: cast_nullable_to_non_nullable
@@ -107,12 +107,12 @@ class __$$_UserActionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserAction with DiagnosticableTreeMixin implements _UserAction {
-  const _$_UserAction(
+class _$UserActionImpl with DiagnosticableTreeMixin implements _UserAction {
+  const _$UserActionImpl(
       {this.launchCount = 0, this.reviewStatus = ReviewStatus.cancel});
 
-  factory _$_UserAction.fromJson(Map<String, dynamic> json) =>
-      _$$_UserActionFromJson(json);
+  factory _$UserActionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserActionImplFromJson(json);
 
   @override
   @JsonKey()
@@ -136,10 +136,10 @@ class _$_UserAction with DiagnosticableTreeMixin implements _UserAction {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserAction &&
+            other is _$UserActionImpl &&
             (identical(other.launchCount, launchCount) ||
                 other.launchCount == launchCount) &&
             (identical(other.reviewStatus, reviewStatus) ||
@@ -153,12 +153,12 @@ class _$_UserAction with DiagnosticableTreeMixin implements _UserAction {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserActionCopyWith<_$_UserAction> get copyWith =>
-      __$$_UserActionCopyWithImpl<_$_UserAction>(this, _$identity);
+  _$$UserActionImplCopyWith<_$UserActionImpl> get copyWith =>
+      __$$UserActionImplCopyWithImpl<_$UserActionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserActionToJson(
+    return _$$UserActionImplToJson(
       this,
     );
   }
@@ -166,10 +166,11 @@ class _$_UserAction with DiagnosticableTreeMixin implements _UserAction {
 
 abstract class _UserAction implements UserAction {
   const factory _UserAction(
-      {final int launchCount, final ReviewStatus reviewStatus}) = _$_UserAction;
+      {final int launchCount,
+      final ReviewStatus reviewStatus}) = _$UserActionImpl;
 
   factory _UserAction.fromJson(Map<String, dynamic> json) =
-      _$_UserAction.fromJson;
+      _$UserActionImpl.fromJson;
 
   @override
   int get launchCount;
@@ -177,6 +178,6 @@ abstract class _UserAction implements UserAction {
   ReviewStatus get reviewStatus;
   @override
   @JsonKey(ignore: true)
-  _$$_UserActionCopyWith<_$_UserAction> get copyWith =>
+  _$$UserActionImplCopyWith<_$UserActionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
