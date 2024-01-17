@@ -34,6 +34,8 @@ class App extends _$App {
   // アプリのセッション内にレビューダイアログを表示したかどうかを管理する
   bool hasShownReviewDialog = false;
 
+  late UserAction userAction;
+
   @override
   AppState build() {
     // アプリ初期化
@@ -46,6 +48,9 @@ class App extends _$App {
       final setting = Setting.fromJson(jsonDecode(sharedPreferences.getString("setting") ?? "{}"));
       final userAction = UserAction.fromJson(jsonDecode(sharedPreferences.getString("user_action") ?? "{}"));
       final packageInfo = value[1] as PackageInfo;
+
+      // アプリ起動回数をカウントアップ
+      await updateUserAction(userAction.copyWith(launchCount: userAction.launchCount + 1));
 
       // 初期化完了
       state = state.copyWith(
@@ -82,6 +87,7 @@ class App extends _$App {
 
   Future updateUserAction(UserAction userAction) async {
     sharedPreferences.setString("user_action", jsonEncode(userAction.toJson()));
+    this.userAction = userAction;
     state = state.copyWith.call(userAction: userAction);
   }
 
@@ -90,10 +96,10 @@ class App extends _$App {
     if (hasShownReviewDialog) return false;
 
     // アプリをインストール後、3回目の起動からレビューダイアログを表示する
-    if (ref.read(appProvider).userAction.launchCount < 3) return false;
+    if (userAction.launchCount < 3) return false;
 
     // OKまたは拒否が押されたことがあるのでレビューダイアログを表示しない
-    if (ref.read(appProvider).userAction.reviewStatus != ReviewStatus.cancel) return false;
+    if (userAction.reviewStatus != ReviewStatus.cancel) return false;
 
     // その他、必要によってアプリごとにレビューダイアログを表示する条件を実装する
 
