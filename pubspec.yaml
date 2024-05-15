@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.37+37
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: '>=3.4.0 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -33,10 +33,10 @@ dependencies:
     sdk: flutter
 
   # Firebase
-  firebase_core: ^2.30.0
-  firebase_analytics: ^10.10.2
-  firebase_crashlytics: ^3.5.2
-  firebase_remote_config: ^4.4.2
+  firebase_core: ^2.31.0
+  firebase_analytics: ^10.10.5
+  firebase_crashlytics: ^3.5.5
+  firebase_remote_config: ^4.4.5
 
   # 状態管理パッケージ
   flutter_riverpod: ^2.5.1
@@ -58,7 +58,7 @@ dependencies:
 
   freezed_annotation: ^2.4.1
   riverpod_annotation: ^2.3.5
-  json_serializable: ^6.7.1
+  json_serializable: ^6.8.0
 
   # プロジェクト名リネームツールで使用
   ini: ^2.1.0
@@ -82,7 +82,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.2
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
