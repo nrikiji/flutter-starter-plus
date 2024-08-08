@@ -11,9 +11,9 @@ class Analytics {
     analytics.setAnalyticsCollectionEnabled(false);
   }
 
-  static Future event(AnalyticsEventType eventType, {Map<String, Object?>? parameters}) async {
+  static Future event(AnalyticsEventType eventType) async {
     final name = await _enumToString(eventType);
-    await analytics.logEvent(name: name, parameters: parameters);
+    await analytics.logEvent(name: name);
   }
 
   static Future _enumToString(eventType) async {

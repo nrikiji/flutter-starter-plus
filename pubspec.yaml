@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.38+38
 
 environment:
-  sdk: '>=3.4.1 <4.0.0'
+  sdk: '>=3.4.4 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -33,10 +33,10 @@ dependencies:
     sdk: flutter
 
   # Firebase
-  firebase_core: ^2.32.0
-  firebase_analytics: ^10.10.7
-  firebase_crashlytics: ^3.5.7
-  firebase_remote_config: ^4.4.7
+  firebase_core: ^3.3.0
+  firebase_analytics: ^11.2.1
+  firebase_crashlytics: ^4.0.4
+  firebase_remote_config: ^5.0.4
 
   # 状態管理パッケージ
   flutter_riverpod: ^2.5.1
@@ -51,12 +51,12 @@ dependencies:
   flutter_settings_ui: ^3.0.1
 
   # ローカルストレージ
-  shared_preferences: ^2.2.3
+  shared_preferences: ^2.3.1
 
   # ブラウザ起動
-  url_launcher: ^6.2.6
+  url_launcher: ^6.3.0
 
-  freezed_annotation: ^2.4.1
+  freezed_annotation: ^2.4.4
   riverpod_annotation: ^2.3.5
   json_serializable: ^6.8.0
 
