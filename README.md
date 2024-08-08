@@ -40,10 +40,6 @@ $ git clone https://github.com/nrikiji/flutter-starter-plus.git
 ### git管理対象外のファイルを手動で追加する
 公開したくないファイルはgitの管理対象外(.gitignore)としているので手動で追加する。
 
-### firebase_options.dartを作成する
-firebase_options.dart.templateを複製してfirebase_options.dartを追加する。  
-GoogleService-Info.plistとgoogle-services.jsonを元にfirebase_options.dartを編集(開発用と本番用それぞれ)。
-
 #### Debugビルド用
 ```
 firebaseコンソールからダウンロードする設定ファイル
@@ -73,6 +69,10 @@ firebaseコンソールからダウンロードする設定ファイル
 ・ios/Runner/GoogleService-Info-prod.plist
 ・android/app/src/release/google-services.json
 ```
+
+### firebase_options.dartを作成する
+firebase_options.dart.templateを複製してfirebase_options.dartを追加する。  
+GoogleService-Info.plistとgoogle-services.jsonを元にfirebase_options.dartを編集(開発用と本番用それぞれ)。
 
 ### AndroidStudioビルド設定
 
