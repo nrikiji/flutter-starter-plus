@@ -12,7 +12,7 @@ part of '../../model/setting.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Setting _$SettingFromJson(Map<String, dynamic> json) {
   return _Setting.fromJson(json);
@@ -23,8 +23,12 @@ mixin _$Setting {
   Theme get theme => throw _privateConstructorUsedError;
   Lang get lang => throw _privateConstructorUsedError;
 
+  /// Serializes this Setting to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Setting
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SettingCopyWith<Setting> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -46,6 +50,8 @@ class _$SettingCopyWithImpl<$Res, $Val extends Setting>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Setting
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -83,6 +89,8 @@ class __$$SettingImplCopyWithImpl<$Res>
       _$SettingImpl _value, $Res Function(_$SettingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Setting
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,11 +148,13 @@ class _$SettingImpl with DiagnosticableTreeMixin implements _Setting {
             (identical(other.lang, lang) || other.lang == lang));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, theme, lang);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Setting
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SettingImplCopyWith<_$SettingImpl> get copyWith =>
@@ -167,8 +177,11 @@ abstract class _Setting implements Setting {
   Theme get theme;
   @override
   Lang get lang;
+
+  /// Create a copy of Setting
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SettingImplCopyWith<_$SettingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -8,7 +8,7 @@ part of '../../model/user_action.dart';
 
 _$UserActionImpl _$$UserActionImplFromJson(Map<String, dynamic> json) =>
     _$UserActionImpl(
-      launchCount: json['launchCount'] as int? ?? 0,
+      launchCount: (json['launchCount'] as num?)?.toInt() ?? 0,
       reviewStatus:
           $enumDecodeNullable(_$ReviewStatusEnumMap, json['reviewStatus']) ??
               ReviewStatus.cancel,

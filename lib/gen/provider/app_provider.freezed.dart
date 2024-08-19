@@ -12,7 +12,7 @@ part of '../../provider/app_provider.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AppState {
@@ -21,7 +21,9 @@ mixin _$AppState {
   UserAction get userAction => throw _privateConstructorUsedError;
   String? get appVersion => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppStateCopyWith<AppState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +53,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -79,6 +83,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     ) as $Val);
   }
 
+  /// Create a copy of AppState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SettingCopyWith<$Res> get setting {
@@ -87,6 +93,8 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
     });
   }
 
+  /// Create a copy of AppState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserActionCopyWith<$Res> get userAction {
@@ -124,6 +132,8 @@ class __$$AppStateImplCopyWithImpl<$Res>
       _$AppStateImpl _value, $Res Function(_$AppStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -197,7 +207,9 @@ class _$AppStateImpl implements _AppState {
   int get hashCode =>
       Object.hash(runtimeType, initialized, setting, userAction, appVersion);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppStateImplCopyWith<_$AppStateImpl> get copyWith =>
@@ -219,8 +231,11 @@ abstract class _AppState implements AppState {
   UserAction get userAction;
   @override
   String? get appVersion;
+
+  /// Create a copy of AppState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppStateImplCopyWith<_$AppStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
