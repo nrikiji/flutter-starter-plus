@@ -6,7 +6,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter_start_app/enum/review_status.dart';
 import 'package:flutter_start_app/model/user_action.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:version/version.dart';
