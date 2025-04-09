@@ -25,6 +25,7 @@ if (flutterVersionName == null) {
 }
 
 android {
+    namespace "nrikiji.flutter_start_app"
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
